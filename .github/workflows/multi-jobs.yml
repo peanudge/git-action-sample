@@ -22,9 +22,17 @@ jobs:
     steps:
       - name: Run Job 2
         run: echo Job2!
+
   job3:
     runs-on: ubuntu-latest
     needs: [job1, job2]
     steps:
       - name: Run Job 3
         run: echo Job3!
+
+  job4:
+    runs-on: ubuntu-latest
+    needs: [job2, job3]
+    steps:
+      - name: Run Job 4
+        run: echo Job4!
